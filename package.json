@@ -1,0 +1,71 @@
+{
+  "name": "react-image-toolkit",
+  "version": "1.0.0",
+  "description": "A powerful React image toolkit with zoom, rotate, magnifier, pan and gallery support.",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "lint": "eslint src --ext ts,tsx",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rvxx007/react-image-toolkit.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/rvxx007/react-image-toolkit/issues"
+  },
+  "homepage": "https://github.com/rvxx007/react-image-toolkit#readme",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.5.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.8.4",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.8"
+  },
+  "keywords": [
+    "react",
+    "image",
+    "zoom",
+    "image zoom",
+    "rotate",
+    "image rotate",
+    "magnifier",
+    "image magnifier",
+    "gallery",
+    "image gallery",
+    "viewer"
+  ],
+  "license": "MIT"
+}
