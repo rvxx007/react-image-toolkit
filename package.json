@@ -2,44 +2,71 @@
   "name": "react-image-toolkit",
   "version": "1.0.0",
   "description": "A powerful React image toolkit with zoom, rotate, magnifier, pan and gallery support.",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./styles.css": "./dist/styles.css"
-  },
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "vitest",
-    "lint": "eslint src --ext ts,tsx",
-    "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage",
-    "test:watch": "vitest --watch"
-  },
-  "files": [
-    "dist"
+  "keywords": [
+    "react",
+    "image",
+    "image-viewer",
+    "zoom",
+    "image-zoom",
+    "rotate",
+    "image-rotate",
+    "magnifier",
+    "image-magnifier",
+    "gallery",
+    "image-gallery",
+    "viewer",
+    "typescript",
+    "react-component"
   ],
-  "sideEffects": [
-    "*.css"
-  ],
+  "license": "MIT",
+  "author": "Akash Kawale",
+  "homepage": "https://github.com/rvxx007/react-image-toolkit#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rvxx007/react-image-toolkit.git"
   },
-  "author": "",
   "bugs": {
     "url": "https://github.com/rvxx007/react-image-toolkit/issues"
   },
-  "homepage": "https://github.com/rvxx007/react-image-toolkit#readme",
-  "dependencies": {
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+  "packageManager": "pnpm@10",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src --ext ts,tsx",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm build && pnpm test"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",
@@ -49,23 +76,11 @@
     "eslint": "^10.5.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.8.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.3",
+    "typescript": "^5.9.2",
     "vite": "^8.0.16",
     "vitest": "^4.1.8"
-  },
-  "keywords": [
-    "react",
-    "image",
-    "zoom",
-    "image zoom",
-    "rotate",
-    "image rotate",
-    "magnifier",
-    "image magnifier",
-    "gallery",
-    "image gallery",
-    "viewer"
-  ],
-  "license": "MIT"
+  }
 }

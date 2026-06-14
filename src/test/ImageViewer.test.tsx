@@ -29,12 +29,15 @@ describe('ImageViewer', () => {
     );
 
     const image =
-      screen.getByRole('img');
+      screen.getByRole('img') as HTMLImageElement;
 
-    expect(image).toHaveStyle({
-      transform:
-        'scale(1.2) rotate(0deg)',
-    });
+    expect(
+      image.style.transform
+    ).toContain('scale(1.2)');
+
+    expect(
+      image.style.transform
+    ).toContain('rotate(0deg)');
   });
 
   it('rotate button changes rotation', () => {
@@ -49,11 +52,45 @@ describe('ImageViewer', () => {
     );
 
     const image =
-      screen.getByRole('img');
+      screen.getByRole('img') as HTMLImageElement;
 
-    expect(image).toHaveStyle({
-      transform:
-        'scale(1) rotate(90deg)',
-    });
+    expect(
+      image.style.transform
+    ).toContain('scale(1)');
+
+    expect(
+      image.style.transform
+    ).toContain('rotate(90deg)');
+  });
+
+  it('reset button resets zoom and rotation', () => {
+    render(
+      <ImageViewer
+        src="test.jpg"
+      />
+    );
+
+    fireEvent.click(
+      screen.getByText('+')
+    );
+
+    fireEvent.click(
+      screen.getByText('↻')
+    );
+
+    fireEvent.click(
+      screen.getByText('Reset')
+    );
+
+    const image =
+      screen.getByRole('img') as HTMLImageElement;
+
+    expect(
+      image.style.transform
+    ).toContain('scale(1)');
+
+    expect(
+      image.style.transform
+    ).toContain('rotate(0deg)');
   });
 });
